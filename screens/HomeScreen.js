@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native'
+import { Image, Text, View, TextInput} from 'react-native'
 import React, { Component, useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,7 +7,9 @@ import {
     ChevronDownIcon,
     SearchIcon,
     AdjustmentsIcon,
+    AdjustmentsVerticalIcon,
 } from "react-native-heroicons/outline";
+import { SearchBar } from 'react-native-screens';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -39,6 +41,25 @@ const HomeScreen = () => {
 
             <UserIcon size={35} color="#00CCBB"/>
           </View>
+
+          {/* Search */}
+
+          <View>
+
+            <View className="flexrow space-x-2 flex-1 bg-gray-200 p-3">
+              <SearchIcon/>
+              <TextInput placeholder="Restaraunts and cuisines"
+              keyboardType="default"
+              />
+            </View>
+
+            
+            <AdjustmentsVerticalIcon color="#00CCBB"/>
+          </View>
+              
+
+          
+
         </Text>
       </SafeAreaView>
     )
